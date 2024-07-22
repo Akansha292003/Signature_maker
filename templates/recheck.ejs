@@ -1,0 +1,243 @@
+<table cellpadding="0" cellspacing="0" style="vertical-align:middle;font-size:medium;font-family:Inter,system-ui,-apple-system,Roboto,Arial,sans-serif">
+    <tbody>
+        <tr>
+            <td>
+                <table cellpadding="0" cellspacing="0" style="vertical-align:middle;font-size:medium;font-family:Inter,system-ui,-apple-system,Roboto,Arial,sans-serif">
+                    <tbody>
+                        <tr>
+                            <%if (profilePicture) { %>
+                            <td width="72" style="vertical-align:middle">
+                                <span style="margin-right:20px;display:block;width:72px;height:72px;border-radius:50%;background-size:cover;background-image:url(<%= profilePicture %>);"></span>
+                            </td>
+                            <% } %>
+                            <% if (profilePicture == '' && gender != '') { %>
+                            <td width="72" style="vertical-align:middle">
+                                <span style="margin-right:20px;display:block">
+                                    <img src="https://drive.google.com/uc?export=view&id=<%= gender == 'woman' ? '1bl5EpmvKIUoKJR4szgCb1UfocDWJhzQh' : '1fZW0Qy1NS5eqgL5aSADAGyT8RqyYCAXl' %>" role="presentation" width="72" style="max-width:72px;width:72px;height:72px;border-radius:200px;object-fit:cover;">
+                                </span>
+                            </td>
+                            <% } %>
+
+                            <td>
+                                <span style="display:block;">
+                                    <%if (fullName) { %>
+                                    <h2 color="#000000" style="margin:0;font-size:16px;color:#000;font-weight:600;vertical-align:middle;display:inline;">
+                                        <%= fullName %> 
+                                    </h2>
+                                    <% } %>
+                                    <%if (pronouns) { %>
+                                        <span style="font-size:14px;font-weight:400;color:#6b7280;vertical-align:text-bottom;">
+                                            &nbsp;(<%= pronouns %>)
+                                        </span>
+                                    <% } %>
+                                    <%if (personalLinkedin) { %>
+                                        <a href="<%= personalLinkedin %>" color="<%= ctaColor %>" style="margin-left:8px;vertical-align:middle;display:inline-block;background-color:<%= ctaColor %>" target="_blank">
+                                            <img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon-2x.png" alt="linkedin" color="<%= ctaColor %>" height="18" style="background-color:<%= ctaColor %>;display:block">
+                                        </a>
+                                    <% } %>
+                                </span>
+                                <span style="display: inline-block;">
+                                  <%if (role) { %>
+                                  <p color="#000000" font-size="medium" style="display: inline-block;margin:0;color:#000;font-size:14px;line-height:22px">
+                                      <span><%= role %></span>
+                                  </p>
+                                  <% } %>
+                                  <%if (company) { %>
+                                  <p color="#000000" font-size="medium" style="display:inline-block;margin:0;font-weight:500;color:#000;font-size:14px;line-height:22px">
+                                      <%if (role) { %>
+                                          &nbsp;&bull;&nbsp;
+                                      <% } %>
+                                      <%if (companyWebsite) { %>
+                                      <a href="<%= companyWebsite %>" target="_blank" rel="noreferrer" style="color: <%= ctaColor %>"><%= company %></a>
+                                      <% } else { %>
+                                      <span><%= company %></span>
+                                      <% } %>
+                                  </p>
+                                  <% } %>
+                                </span>
+                            </td>
+                            
+                            <!-- Vertical Delimiter -->
+                            <% if (phoneNumber || email || website) { %>
+                            <td width="15"><div style="width:15px"></div></td>
+                            <td color="<%= ctaColor %>" direction="vertical" width="1" height="auto" style="width:1px;border-bottom:none;border-left:1px solid <%= ctaColor %>"></td>
+                            <td width="15"><div style="width:15px"></div></td>
+                            <% } %>
+
+                            <td>
+                                <table cellpadding="0" cellspacing="0" style="vertical-align:middle;font-size:medium;font-family:Inter,system-ui,-apple-system,Roboto,Arial,sans-serif">
+                                    <tbody>
+                                        <%if (phoneNumber) {  %>
+                                        <tr height="25" style="vertical-align:middle">
+                                            <td width="30" style="vertical-align:middle">
+                                                <table cellpadding="0" cellspacing="0" style="vertical-align:middle;font-size:medium;font-family:Inter,system-ui,-apple-system,Roboto,Arial,sans-serif">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="vertical-align:bottom">
+                                                                <span width="11" color="<%= ctaColor %>" style="color: <%= ctaColor %>">
+                                                                    <img
+                                                                        src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/phone-icon-2x.png"
+                                                                        color="<%= ctaColor %>"
+                                                                        alt="phonenumber"
+                                                                        width="13"
+                                                                        style="display: block;background-color:<%= ctaColor %>;"
+                                                                    />
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td style="padding:0;color:#000">
+                                                <a href="tel:<%= phoneNumber %>" color="#000000" style="text-decoration:none;color:#000;font-size:12px">
+                                                    <span><%= phoneNumber %></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                        <%if (email) {  %>
+                                        <tr height="25" style="vertical-align:middle">
+                                            <td width="30" style="vertical-align:middle">
+                                                <table cellpadding="0" cellspacing="0" style="vertical-align:middle;font-size:medium;font-family:Inter,system-ui,-apple-system,Roboto,Arial,sans-serif">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="vertical-align:bottom">
+                                                                <span width="11" color="<%= ctaColor %>" style="color: <%= ctaColor %>">
+                                                                    <img
+                                                                        src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/email-icon-2x.png"
+                                                                        color="<%= ctaColor %>"
+                                                                        alt="email"
+                                                                        width="13"
+                                                                        style="display: block;background-color:<%= ctaColor %>;"
+                                                                    />
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td style="padding:0">
+                                                <a href="mailto:<%= email %>" color="#000000" style="text-decoration:none;color:#000;font-size:12px">
+                                                    <span><%= email %></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                        <%if (website) {  %>
+                                        <tr height="25" style="vertical-align:middle">
+                                            <td width="30" style="vertical-align:middle">
+                                                <table cellpadding="0" cellspacing="0" style="vertical-align:middle;font-size:medium;font-family:Inter,system-ui,-apple-system,Roboto,Arial,sans-serif">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="vertical-align:bottom">
+                                                                <span width="11" color="<%= ctaColor %>" style="color: <%= ctaColor %>">
+                                                                    <img
+                                                                        src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/link-icon-2x.png"
+                                                                        color="<%= ctaColor %>"
+                                                                        alt="website"
+                                                                        width="13"
+                                                                        style="display: block;background-color:<%= ctaColor %>;"
+                                                                    />
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td style="padding:0;">
+                                                <a href="<%= website %>" target="_blank" color="#000000" style="text-decoration:none;color:#000;font-size:12px">
+                                                    <span><%= website %></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <!-- Horizontal Delimiter -->
+        <%if (companyLogo || facebook || twitter || linkedin || instagram) { %>
+        <tr>
+            <td>
+                <table cellpadding="0" cellspacing="0" style="width:100%;vertical-align:middle">
+                    <tbody>
+                        <tr><td height="15"></td></tr>
+                        <tr>
+                            <td color="<%= ctaColor %>" direction="horizontal" width="auto" height="1" style="width:100%;border-bottom:1px solid <%= ctaColor %>;border-left:none;display:block"></td>
+                        </tr>
+                        <tr><td height="15"></td></tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <% } %>
+
+        <!-- Social media -->
+        <tr>
+            <td>
+                <table cellpadding="0" cellspacing="0" style="width:100%;vertical-align:middle;">
+                    <tbody>
+                        <tr style="width:100%;vertical-align:middle;">
+                            <%if (companyLogo) {  %>
+                            <td style="vertical-align: top">
+                                <%if (companyWebsite) {  %>
+                                <a href="<%= companyWebsite %>" target="_blank" rel="noreferrer">
+                                    <img src="<%= companyLogo %>" role="presentation" width="84" style="display:inline-block;max-width:84px">
+                                </a>
+                                <% } else { %>
+                                <img src="<%= companyLogo %>" role="presentation" width="84" style="display:inline-block;max-width:84px">
+                                <% } %>
+                            </td>
+                            <% } %>
+                            <td style="text-align:right;vertical-align:<%if (companyLogo) { %>middle <% } else { %> top <% } %>">
+                                <table cellpadding="0" cellspacing="0" style="display:inline-block;vertical-align:middle;">
+                                    <tbody>
+                                        <tr style="text-align:right">
+                                            <%if (facebook) {  %>
+                                            <td>
+                                                <a href="<%= facebook %>" color="<%= ctaColor %>" style="display:inline-block;padding:0;background-color:<%= ctaColor %>" target="_blank">
+                                                    <img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/facebook-icon-2x.png" alt="facebook" color="<%= ctaColor %>" height="24" style="background-color:<%= ctaColor %>;max-width:135px;display:block">
+                                                </a>
+                                            </td>
+                                            <td width="5"><div></div></td>
+                                            <% } %>
+                                            <%if (twitter) {  %>
+                                            <td>
+                                                <a href="<%= twitter %>" color="<%= ctaColor %>" style="display:inline-block;padding:0;background-color:<%= ctaColor %>" target="_blank">
+                                                    <img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/twitter-icon-2x.png" alt="twitter" color="<%= ctaColor %>" height="24" style="background-color:<%= ctaColor %>;max-width:135px;display:block">
+                                                </a>
+                                            </td>
+                                            <td width="5"><div></div></td>
+                                            <% } %>
+                                            <%if (linkedin) {  %>
+                                            <td>
+                                                <a href="<%= linkedin %>" color="<%= ctaColor %>" style="display:inline-block;padding:0;background-color:<%= ctaColor %>" target="_blank">
+                                                    <img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/linkedin-icon-2x.png" alt="linkedin" color="<%= ctaColor %>" height="24" style="background-color:<%= ctaColor %>;max-width:135px;display:block">
+                                                </a>
+                                            </td>
+                                            <td width="5"><div></div></td>
+                                            <% } %>
+                                            <%if (instagram) {  %>
+                                            <td>
+                                                <a href="<%= instagram %>" color="<%= ctaColor %>" style="display:inline-block;padding:0;background-color:<%= ctaColor %>" target="_blank">
+                                                    <img src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/instagram-icon-2x.png" alt="instagram" color="<%= ctaColor %>" height="24" style="background-color:<%= ctaColor %>;max-width:135px;display:block">
+                                                </a>
+                                            </td>
+                                            <td width="5"><div></div></td>
+                                            <% } %>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
